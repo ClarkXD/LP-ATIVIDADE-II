@@ -1,36 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <locale.h>
 
-int verificaprimo(int numero) {
-    if (numero < 2) {
-        return 0;
-    }
-    for (int i = 2; i <= numero/2; i++) {
-        if (numero % i == 0) {
-            return 0;
-        }
-    }
-    return 1;
-}
+int main () {
 
-int main() {
+    setlocale(LC_ALL, "portuguese");
 
-  setlocale(LC_ALL, "portuguese");
-  
     int numero;
+    int numeroprimo = 1;
+    int i;
+    float resultado;
 
     printf("Digite um número inteiro: ");
     scanf("%d", &numero);
 
-    switch (verificaprimo(numero)) {
-        case 1:
-            printf("Número primo\n");
-            break;
-        default:
-            printf("Número não primo\n");
-            break;
+    if (numero <= 1) {
+
+        numeroprimo = 0;
+        
+    } else {
+
+        for (i = 2; i <= numero / 2; i++) {
+
+            if (numero % i == 0) {
+                numeroprimo = 0; 
+                break;
+            }
+
+        }
+
+    }
+
+    switch (numeroprimo){
+
+    case 0:
+        printf("\nO número que você digitou não é um número primo.\n");
+        break;
+
+    case 1:
+        printf("\nO número que você digitou é um número primo.\n");
+    
+    default:
+        break;
     }
 
     return 0;
