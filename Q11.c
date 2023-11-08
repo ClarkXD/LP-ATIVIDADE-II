@@ -8,14 +8,14 @@ int main(){
     setlocale(LC_ALL, "portuguese");
 
     
-    int codigo_acesso = 1212;
+    int codigoacesso = 1212;
     int tentativa;
 
     while (1) {
         printf("Digite o código de acesso: ");
         scanf("%d", &tentativa);
 
-        if (tentativa == codigo_acesso) {
+        if (tentativa == codigoacesso) {
             printf("Acesso permitido! \n");
             break;
         } else {
